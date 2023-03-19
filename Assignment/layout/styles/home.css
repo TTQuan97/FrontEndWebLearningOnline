@@ -1,0 +1,52 @@
+.carousel-item img {
+    border-radius: 5px;
+    height: 400px;
+}
+
+.nganhDaoTao .row .col_training {
+    height: 300px;
+}
+
+.img-training {
+    height: 100%;
+    width: 100%;
+}
+
+.nganhDaoTao .row .col_training:hover img { 
+    filter: contrast(30%);
+}
+
+.nganhDaoTao .row .col_training:hover .list_training {
+    display: block;
+}
+
+.nganhDaoTao .row .col_training {
+    position: relative;
+}
+
+.name_training {
+    color: orange;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    right: 30px;
+}
+
+.list_training {
+    position: absolute;
+    bottom: 0px;
+}
+
+.list_training:hover {
+    cursor: pointer;
+}
+
+.list_training li {
+    list-style: none;
+    color: white;
+    font-weight: 700;
+}
+
+.list_training li:hover {
+    color: orange;
+}

@@ -1,0 +1,42 @@
+<div class="row my-3 content">
+    <article class="col-lg-7 col mx-5 px-0">
+        <div class="row">
+            <div class="col-md-6 my-3" ng-repeat="subject in listSubjects|limitTo:numberSubjectwantToDisplay:begin">
+                <a href="#!quizs{{subject.Id}}" style="text-decoration: none;" ng-click="printf()">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-center">
+                            <img class="img-fluid" ng-src="\Asm-TaiNguyen\images\logos\{{subject.Logo}}" alt="">
+                        </div>
+                        <div class="card-footer text-center" style="height: 100px;">
+                            <h6>{{subject.Name}}</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <nav>
+            <ul class="pagination row justify-content-center">
+                <li ng-repeat="num in numberPagination" style="width: 60px;" class="page-item my-1 px-1">
+                    <a ng-click="getPage($index+1)" class="page-link col" href="">{{$index+1}}</a>
+                </li>
+            </ul>
+        </nav>
+    </article>
+    <aside class="col my-3 me-3">
+        <div class="row">
+            <div class="card mb-1 px-0">
+                <div class="card-header">
+                    <span data-bs-target="#menu_ChungLoai">
+                        <h5><i class='fas fa-bars me-2'></i>Danh mục môn học</h5>
+                    </span>
+                </div>
+                <div class="card-body px-0 py-0" id="menu_ChungLoai">
+                    <div class="list-group list-group-flush" ng-repeat="subject in listSubjects">
+                        <a class="list-group-item list-group-item-action" href="#">
+                            <i class="fa-solid fa-book-journal-whills me-2"></i>{{subject.Name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>

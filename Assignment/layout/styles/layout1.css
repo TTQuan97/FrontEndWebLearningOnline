@@ -1,0 +1,44 @@
+.navbar {
+    background-color: rgba(202, 85, 17, 0.911);
+}
+
+.nav-link {
+    color: white;
+}
+
+.card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.card:hover {
+    border: solid 1px rgb(0, 195, 255);
+    transition: 0.3s;
+}
+
+.content {
+    border: solid 1px rgba(214, 156, 30, 0.911);
+    border-radius: 5px;
+}
+
+.nav-item:hover .nav-link {
+    color: white;
+}
+
+.nav-item:hover {
+    background-color: rgba(0, 0, 0, 0.288);
+}
+
+
+.btn_direction_page button {
+    width: 70px;
+    margin-left: 3px;
+    margin-right: 3px;
+    background-color: white;
+    border: solid 1px rgba(177, 179, 180, 0.637);
+    border-radius: 5px;
+}
+
+.btn_direction_page button:hover {
+    background-color: rgba(0, 183, 255, 0.637);
+}

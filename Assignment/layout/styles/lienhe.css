@@ -1,0 +1,18 @@
+.content {
+    background-color: rgba(6, 6, 45, 0.905);
+}
+
+h3 {
+    font-weight: 200;
+    color: orange;
+}
+
+u,
+p {
+    color: white;
+    font-size: 13px;
+}
+
+.btn {
+    padding: 0;
+}

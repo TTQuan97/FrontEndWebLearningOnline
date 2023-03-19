@@ -1,0 +1,27 @@
+<div class="row my-3 content justify-content-center" style="background-color: white;">
+    <div class="card col-10 my-3">
+        <div class="card-header text-center">
+            <h4>Chung tay cải thiện chất lượng</h4>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="vande">
+                    <h6>Chọn vấn đề góp ý</h6>
+                </label>
+                <select class="form-select" name="vande" id="vandecangiaiquyet">
+                    <option ng-repeat="index in arrVanDe" value="{{index}}">{{index}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="chiTiet">
+                    <h6>Chi Tiết <span style="color: red;">*</span></h6>
+                </label>
+                <textarea class="form-control" name="chiTiet" id="chiTietGopY" cols="30" rows="5" style="width: 100%;"
+                    placeholder="Vui lòng nhập chi tiết vấn đề"></textarea>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="#" class="btn bg-primary py-1" style="color: white; width: 80px;">Gửi</a>
+        </div>
+    </div>
+</div>

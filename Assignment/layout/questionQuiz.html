@@ -1,0 +1,58 @@
+<div class="card mt-3" style="height: 400px;">
+    <div class="card-header">
+        <h4><i class="fa-solid fa-book-journal-whills me-2"></i>{{subject.Name}}</h4>
+    </div>
+    <div class="card-body" ng-repeat="question in listQuestion|limitTo:1:begin">
+        <div>
+            <h5>{{begin+1}} . {{question.Text}}</h5>
+        </div>
+        <hr>
+        <div ng-repeat="answer in question.Answers">
+            <input style="cursor: pointer;" type="radio" name="question"
+                ng-click="checkAnswer(question.Id,question.AnswerId,answer.Id)"> {{answer.Text}}
+        </div>
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-between">
+        <h6>Câu hỏi :{{begin+1}} / {{listQuestion.length}} (mỗi câu = 1 điểm)</h6>
+        <div>
+            <button type="button" class="btn btn-success px-2" data-bs-toggle="modal" data-bs-target="#modalId">
+                Chấm điểm
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+    aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">Tổng điểm của bạn</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <h4 style="color: red;"><i class="fas fa-trophy me-2"></i>{{}}</h4>
+                <hr>
+                <div ng-show="listIncorrectAnswer.length>0">
+                    <h6>Các câu trả lời sai</h6>
+                    <p style="color: red;" ng-repeat="answer in listIncorrectAnswer">answer.id</p>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button ng-click="offStudy()" class="btn btn-secondary px-2">Kết thúc bài học</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Optional: Place to the bottom of scripts -->
+<script>
+    const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+
+</script>
+<div class="my-3 d-flex justify-content-center">
+    <button ng-click="firstQuestion()" class="btn btn-primary px-3 mx-1">Đầu</button>
+    <button ng-click="previousQuestion()" class="btn btn-primary px-3 mx-1">Trước</button>
+    <button ng-click="nextQuestion()" class="btn btn-primary px-3 mx-1">Tiếp</button>
+    <button ng-click="endQuestion()" class="btn btn-primary px-3 mx-1">Cuối</button>
+</div>

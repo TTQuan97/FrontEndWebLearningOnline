@@ -1,0 +1,11 @@
+form p {
+    color: red;
+}
+
+input.ng-invalid {
+    background-image: url("iconwarning.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 20px;
+    border: solid 1px red;
+}

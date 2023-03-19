@@ -1,0 +1,94 @@
+<div class="row my-3 content justify-content-center" style="background-color: white;">
+    <div class="card col-md-6 my-3">
+        <form id="formSignUp" name="formSignUp" action="" ng-submit="signUp($event)" novalidate>
+            <div class="card-body">
+                <div>
+                    <h2>Đăng ký</h2>
+                </div>
+                <div class="my-4">
+                    <label for="">
+                        <h6 class="d-flex align-items-center mb-1">Tài khoản</h6>
+                    </label>
+                    <input ng-model="newStudent.username" ng-click="warningUser=false" name="user" type="text"
+                        class="form-control" required>
+                    <p ng-show="formSignUp.user.$invalid">Vui lòng nhập tài khoản</p>
+                    <p ng-show="warningUser">Tài khoản đã tồn tại</p>
+                </div>
+                <div class="my-4">
+                    <div class="d-flex justify-content-between">
+                        <label for="new_password">
+                            <h6 class="d-flex align-items-center  mb-1">Mật khẩu</h6>
+                        </label>
+                        <span ng-click="showHidePass1()" id="show_hide_Pass1" style="cursor: pointer;"
+                            class="row align-items-center  mb-1">
+                            <i id="icon1" class="fa-solid fa-eye me-1 col px-0"></i>
+                            <h6 id="text1" class="col ps-0 m-0">Hiện</h6>
+                        </span>
+                    </div>
+                    <input ng-model="newStudent.password" id="pass_input1" type="password" class="form-control"
+                        name="new_password" required>
+                    <p ng-show="formSignUp.new_password.$invalid">Vui lòng nhập mật khẩu</p>
+                </div>
+                <div class="my-4">
+                    <div class="d-flex justify-content-between">
+                        <label for="confirm_password">
+                            <h6 class="d-flex align-items-center  mb-1">Xác nhận mật khẩu</h6>
+                        </label>
+                        <span ng-click="showHidePass2()" id="show_hide_Pass2" style="cursor: pointer;"
+                            class="row align-items-center  mb-1">
+                            <i id="icon2" class="fa-solid fa-eye me-1 col px-0"></i>
+                            <h6 id="text2" class="col ps-0 m-0">Hiện</h6>
+                        </span>
+                    </div>
+                    <input ng-click="warningConfirmPass=false" ng-model="ConfirmPassWord" id="pass_input2"
+                        type="password" class="form-control" name="confirm_password" required>
+                    <p ng-show="formSignUp.confirm_password.$invalid">Vui lòng nhập mật khẩu</p>
+                    <p ng-show="warningConfirmPass && formSignUp.confirm_password.$valid">Mật khẩu không trùng
+                        khớp
+                    </p>
+                </div>
+                <div class="my-4">
+                    <div class="d-flex justify-content-between">
+                        <label for="new_email">
+                            <h6 class="d-flex align-items-center  mb-1">Email</h6>
+                        </label>
+                    </div>
+                    <input ng-model="newStudent.email" type="email" class="form-control" name="new_email" required>
+                    <p ng-show="formSignUp.new_email.$invalid">Vui lòng nhập đủ email</p>
+                </div>
+                <div class="my-4">
+                    <div class="d-flex justify-content-between">
+                        <label for="fullname">
+                            <h6 class="d-flex align-items-center  mb-1">Họ và tên</h6>
+                        </label>
+                    </div>
+                    <input ng-model="newStudent.fullname" type="text" class="form-control" name="fullname" required>
+                    <p ng-show="formSignUp.fullname.$invalid">Vui lòng nhập họ tên</p>
+                </div>
+                <div class="my-4">
+                    <div class="d-flex justify-content-between">
+                        <label for="gender">
+                            <h6 class="d-flex align-items-center  mb-1">Giới tính</h6>
+                        </label>
+                    </div>
+                    Nam<input ng-model="newStudent.gender" ng-value="1" class="ms-1" type="radio" name="gender">
+                    Nữ<input ng-model="newStudent.gender" ng-value="0" class="ms-1" type="radio" name="gender">
+                </div>
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <label for="birthday">
+                            <h6 class="d-flex align-items-center  mb-1">Ngày sinh</h6>
+                        </label>
+                    </div>
+                    <input ng-model="newStudent.birthday" type="date" class="form-control" name="birthday" required>
+                    <p ng-show="formSignUp.birthday.$invalid">Vui lòng chọn ngày sinh</p>
+                </div>
+                <div class="my-4 d-flex justify-content-center">
+                    <button ng-disabled="formSignUp.$invalid" type="submit" class="btn btn-success"
+                        style="width: 70%; height: 40px; border-radius: 30px;">Đăng
+                        ký</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

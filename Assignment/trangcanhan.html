@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HocOnline</title>
+    <meta charset="uft-8"><!--necessary to run bootstrap-->
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--necessary to run bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e09fb2ddf9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="layout/styles/layout1.css">
+    <link rel="stylesheet" href="layout/styles/lienhe.css">
+    <link rel="stylesheet" href="layout/styles/home.css">
+    <script src="angular-1.8.2/angular.min.js"></script>
+    <script src="angular-1.8.2/angular-route.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container" ng-app="appPersonal">
+        <header class="row">
+            <img class="img-fluid header_picture px-0" src="\Asm-TaiNguyen\images\banner1.png" alt="Image Error">
+        </header>
+        <nav class="row navbar navbar-expand-lg py-0">
+            <div class="container-fluid px-0">
+                <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsible_Navbar">
+                    <i class='fas fa-bars me-1'></i>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsible_Navbar">
+                    <ul class="navbar-nav col-9">
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" href="#!home"> <i class='fas fa-home me-1'></i>FPT
+                                Polytecnic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" href="#!gioiThieu"> <i class='fas fa-bars me-1'></i>Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" href="#!lienhe"> <i class='fas fa-phone me-1'></i>Liên hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" href="#!gopy"> <i class='fas fa-comment me-1'></i>Góp ý</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-2" href="#!hoidap"> <i class='fas fa-question me-1'></i>Hỏi đáp</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav col justify-content-end pe-0">
+                        <li class="nav-item dropdown">
+                            <a ng-controller="ctrlPersonal" class="nav-link dropdown-toggle ps-2"
+                                data-bs-toggle="dropdown" href="#"> <i class='fas fa-user me-1'></i>
+                                Hello {{acountActive}} </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#!danhsachmonhoc">Danh sách môn học</a></li>
+                                <li><a class="dropdown-item" href="#!doimatkhau">Đổi mật khẩu</a></li>
+                                <li><a class="dropdown-item" href="#!capnhattaikhoan">Cập nhật tài khoản</a></li>
+                                <li ng-controller="ctrlLogOut" ng-click="logOut()"><a class="dropdown-item"
+                                        href="index.html">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div ng-view></div>
+    </div>
+    <script>
+        var appPersonal = angular.module('appPersonal', ['ngRoute']);
+    </script>
+    <script src="controller/Api.js"></script>
+    <script src="routerPersonal.js"></script>
+    <script src="controller/appPersonal.js"></script>
+    <script src="controller/logout.js"></script>
+    <script src="controller/updateaccount.js"></script>
+    <script src="controller/gopyPersonal.js"></script>
+    <script src="controller/displaySubject.js"></script>
+    <script src="controller/quiz.js"></script>
+</body>
+<footer>
+    <div class="row my-3 content">
+        <div class="col-md my-5 mx-5">
+            <div class="row">
+                <img style="width:200px;" src="Asm-TaiNguyen\images\logoFPT.png" alt="">
+            </div>
+            <div class="row mt-2">
+                <div style="width: 250px;">
+                    <a class="btn col-2 mx-1" href="https://www.facebook.com/fpt.poly"><img
+                            src="Asm-TaiNguyen\images\ico-fb-landing.png" alt=""></a>
+                    <a class="btn col-2 mx-1"
+                        href="https://vi.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Cao_%C4%91%E1%BA%B3ng_Th%E1%BB%B1c_h%C3%A0nh_FPT"><img
+                            src="Asm-TaiNguyen\images\ico-wiki-landing.png" alt=""></a>
+                    <a class="btn col-2 mx-1" href="https://www.youtube.com/channel/UCHXm-vzOfAuLucVBKDUfhvQ"><img
+                            src="Asm-TaiNguyen\images\ico-youtube-landing.png" alt=""></a>
+                    <a class="btn col-2 mx-1" href="https://www.tiktok.com/@fptpolytechnic?lang=en"><img
+                            src="Asm-TaiNguyen\images\icon-tiktok.png" alt=""></a>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <h3>THÔNG TIN LIÊN HỆ</h3>
+            </div>
+            <div>
+                <p>Điện thoại: (024) 7300 1955</p>
+            </div>
+            <div>
+                <p>Email: caodang@fpt.edu.vn</p>
+            </div>
+        </div>
+        <div class="col-md my-5 mx-5">
+            <h3>HỆ THỐNG VĂN PHÒNG TUYỂN SINH</h3>
+            <div class="row">
+                <u>Cở sở Hà Nội</u>
+                <p><i class="fa-solid fa-location-pin me-1"></i>Cổng số 1, Tòa nhà FPT Polytechnic, phố Trịnh Văn
+                    Bô,
+                    phường Phương Canh, quận Nam Từ Liêm, TP Hà
+                    Nội</p>
+                <p><i class="fa-solid fa-phone me-1"></i>(024) 8582 0808</p>
+            </div>
+            <div class="row">
+                <u>Cở sở Hà Nội</u>
+                <p><i class="fa-solid fa-location-pin me-1"></i>Cổng số 1, Tòa nhà FPT Polytechnic, phố Trịnh Văn
+                    Bô,
+                    phường Phương Canh, quận Nam Từ Liêm, TP Hà
+                    Nội</p>
+                <p><i class="fa-solid fa-phone me-1"></i>(024) 8582 0808</p>
+            </div>
+            <div class="row">
+                <u>Cở sở Hà Nội</u>
+                <p><i class="fa-solid fa-location-pin me-1"></i>Cổng số 1, Tòa nhà FPT Polytechnic, phố Trịnh Văn
+                    Bô,
+                    phường Phương Canh, quận Nam Từ Liêm, TP Hà
+                    Nội</p>
+                <p><i class="fa-solid fa-phone me-1"></i>(024) 8582 0808</p>
+            </div>
+            <div class="row">
+                <u>Cở sở Hà Nội</u>
+                <p><i class="fa-solid fa-location-pin me-1"></i>Cổng số 1, Tòa nhà FPT Polytechnic, phố Trịnh Văn
+                    Bô,
+                    phường Phương Canh, quận Nam Từ Liêm, TP Hà
+                    Nội</p>
+                <p><i class="fa-solid fa-phone me-1"></i>(024) 8582 0808</p>
+            </div>
+        </div>
+        <div class="col-md my-5 mx-5">
+            <div class="row">
+                <u>Cở sở Hà Nội</u>
+                <p><i class="fa-solid fa-location-pin me-1"></i>Cổng số 1, Tòa nhà FPT Polytechnic, phố Trịnh Văn
+                    Bô,
+                    phường Phương Canh, quận Nam Từ Liêm, TP Hà
+                    Nội</p>
+                <p><i class="fa-solid fa-phone me-1"></i>(024) 8582 0808</p>
+            </div>
+            <div class="row">
+                <u>Cở sở Hà Nội</u>
+                <p><i class="fa-solid fa-location-pin me-1"></i>Cổng số 1, Tòa nhà FPT Polytechnic, phố Trịnh Văn
+                    Bô,
+                    phường Phương Canh, quận Nam Từ Liêm, TP Hà
+                    Nội</p>
+                <p><i class="fa-solid fa-phone me-1"></i>(024) 8582 0808</p>
+            </div>
+            <div class="row">
+                <u>Cở sở Hà Nội</u>
+                <p><i class="fa-solid fa-location-pin me-1"></i>Cổng số 1, Tòa nhà FPT Polytechnic, phố Trịnh Văn
+                    Bô,
+                    phường Phương Canh, quận Nam Từ Liêm, TP Hà
+                    Nội</p>
+                <p><i class="fa-solid fa-phone me-1"></i>(024) 8582 0808</p>
+            </div>
+            <div class="row">
+                <u>Cở sở Hà Nội</u>
+                <p><i class="fa-solid fa-location-pin me-1"></i>Cổng số 1, Tòa nhà FPT Polytechnic, phố Trịnh Văn
+                    Bô,
+                    phường Phương Canh, quận Nam Từ Liêm, TP Hà
+                    Nội</p>
+                <p><i class="fa-solid fa-phone me-1"></i>(024) 8582 0808</p>
+            </div>
+        </div>
+    </div>
+</footer>

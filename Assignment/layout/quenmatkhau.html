@@ -1,0 +1,66 @@
+<div class="row my-3 content justify-content-center" style="background-color: white;">
+    <div class="card col-md-6 my-3">
+        <form action="" name="formForgotPass" id="formForgotPass" class="was-validated" novalidate>
+            <div class="card-body">
+                <div>
+                    <h2>Quên mật khẩu</h2>
+                </div>
+                <div class="my-4">
+                    <label for="">
+                        <h6 class="d-flex align-items-center mb-1">Tài khoản</h6>
+                    </label>
+                    <input ng-model="inputusername" type="text" ng-click="warningUser=false" class="form-control"
+                        required>
+                    <p class="invalid-feedback">Vui lòng nhập tài khoản</p>
+                    <p style="color: red;" ng-show="warningUser">Tài khoản không chính xác</p>
+                </div>
+                <div class="my-4">
+                    <label for="">
+                        <h6 class="d-flex align-items-center mb-1">Email</h6>
+                    </label>
+                    <input type="email" ng-model="inputemail" ng-click="warningEmail=false" class="form-control"
+                        required>
+                    <p class="invalid-feedback">Vui lòng nhập đúng email</p>
+                    <p style="color: red;" ng-show="warningEmail">Email không chính xác</p>
+                </div>
+                <div class="my-4">
+                    <div class="d-flex justify-content-between">
+                        <label for="new_password">
+                            <h6 class="d-flex align-items-center  mb-1">Mật khẩu mới</h6>
+                        </label>
+                        <span id="show_hide_Pass1" ng-click="showHidePass1()" style="cursor: pointer;"
+                            class="row align-items-center  mb-1">
+                            <i id="icon1" class="fa-solid fa-eye me-1 col px-0"></i>
+                            <h6 id="text1" class="col ps-0 m-0">Hiện</h6>
+                        </span>
+                    </div>
+                    <input id="pass_input1" ng-model="newpass" type="password" class="form-control" name="new_password"
+                        required>
+                    <p class="invalid-feedback">Vui lòng nhập mật khẩu</p>
+                </div>
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <label for="new_password">
+                            <h6 class="d-flex align-items-center  mb-1">Xác nhận mật khẩu mới</h6>
+                        </label>
+                        <span id="show_hide_Pass2" ng-click="showHidePass2()" style="cursor: pointer;"
+                            class="row align-items-center  mb-1">
+                            <i id="icon2" class="fa-solid fa-eye me-1 col px-0"></i>
+                            <h6 id="text2" class="col ps-0 m-0">Hiện</h6>
+                        </span>
+                    </div>
+                    <input id="pass_input2" ng-model="confirmPass" ng-click="warningPass=false" type="password"
+                        class="form-control" name="new_password" required>
+                    <p class="invalid-feedback">Vui lòng nhập mật khẩu</p>
+                    <p style="color: red;" ng-show="warningPass">Mật khẩu không trùng khớp</p>
+                </div>
+                <div class="my-4 d-flex justify-content-center">
+                    <button ng-disabled="formForgotPass.$invalid" ng-click="forgotAccount($event)"
+                        class="btn btn-success" style="width: 70%; height: 40px; border-radius: 30px;">Khôi
+                        phục mật khẩu</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
